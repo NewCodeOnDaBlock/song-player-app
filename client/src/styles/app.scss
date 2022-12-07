@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+body {
+  background: rgb(106, 70, 157);
+  font-family: 'Lato', sans-serif;
+}
+
+h3,h4 {
+  font-weight: 400;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-animation {
+  position: absolute;
+  top: 100px;
+}
+
+.main-background {
+  width: 600px;
+  height: 70vh;
+  position: absolute;
+  z-index: -1;
+  // top: 5;
+  right: 30px;
+}
+
+.app {
+  position: relative;
+  width: 400px;
+  min-height: 85vh;
+  margin-top: 2%;
+  background: white;
+  // background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  // border: 2px solid #5E46EC;
+  box-shadow: 0px 0px 50px #000000;
+  padding-bottom: 20px;
+  z-index: 1;
+}
+
+@import './song';
+@import './player';
+@import './library';
+@import './nav';
