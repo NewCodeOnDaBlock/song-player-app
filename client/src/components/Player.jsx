@@ -17,7 +17,7 @@ const Player = ({
   currentSong,
   songs,
   setCurrentSong,
-  setSongs,
+  setSongs
 }) => {
 
   const activeLibraryHandler = (nextPrev) => {

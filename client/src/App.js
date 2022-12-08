@@ -37,14 +37,8 @@ function App({loop,animationData }) {
     setSongInfo({...songInfo, currentTime: current, duration: duration})
   }
 
-  const toggleLibrary = () => {
-    if(libraryStat === true) {
-      setLibraryStat(false)
-    }
-  }
-
   return (
-    <div className='main-container' onClick={toggleLibrary}>
+    <div className='main-container'>
       <Lottie loop={true} animationData={BackgroundAnimation} className='player-animation'/>
       <div className="app">
       <Lottie loop={true} animationData={MainBackground} className='main-background'/>
@@ -72,6 +66,7 @@ function App({loop,animationData }) {
       <Library
         audioRef={audioRef}
         songs={songs}
+        setSongs={setSongs}
         currentSong={currentSong}
         setCurrentSong={setCurrentSong}
         isPlaying={isPlaying}

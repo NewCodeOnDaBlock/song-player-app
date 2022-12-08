@@ -1,18 +1,52 @@
-import React from 'react'
+import React from 'react';
+import { playAudio } from "../play";
+
+
 
 const LibrarySong = ({
-  song, songs, currentSong, 
-  setCurrentSong, id, audioRef, isPlaying, setIsPlaying }) => {
+  name,
+  artist,
+  cover,
+  id,
+  setCurrentSong,
+  songs,
+  audioRef,
+  isPlaying,
+  setSongs,
+  active,
+  song,
+  setIsPlaying,
+}) => {
 
   
   const songSelectHandler = async () => {
     await setCurrentSong(song)
     audioRef.current.play();
-    setIsPlaying(true)
+    setIsPlaying(true)  
+
+    const newSongs = songs.map((song) => {
+      if (song.id === id) {
+        return {
+          ...song,
+          active: true
+        };
+      
+    } else {
+        return {
+          ...song,
+          active: false
+
+        };
+      }
+    });
+    setSongs(newSongs);
+    
+    //Play audio
+    playAudio(isPlaying, audioRef);
   }
   
   return (
-    <div className='library-song' onClick={songSelectHandler}>
+    <div className={`library-song ${song.active ? 'selected' : ''}`} onClick={songSelectHandler}>
       <img
         src={song.cover}
         alt="song-cover"
