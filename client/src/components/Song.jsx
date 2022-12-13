@@ -7,7 +7,7 @@ const Song = ({currentSong, isPlaying, AudioVisual}) => {
 
   useEffect(() => {
     const running = imageRef.current.style.animationPlayState === 'running';
-    imageRef.current.style.animationPlayState = running ? 'running' : 'paused';
+    imageRef.current.style.animationPlayState = running ? 'paused' : 'running';
   }, [currentSong, isPlaying])
 
 
